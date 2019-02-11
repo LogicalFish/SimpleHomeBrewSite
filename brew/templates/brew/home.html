@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .paddy{
+        padding: 10px
+    }
+</style>
+
+<div class="row pt-5">
+    {% for class in classes %}
+
+    <div class="col-lg-3 col-sm-4 col-6 text-center paddy" onclick="window.location='{% url 'job' class.id %}';" style="cursor: pointer;">
+
+        <h3>{{ class.name }}</h3>
+        {{ class.description }}
+        <br/>
+    </div>
+    <br/>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
